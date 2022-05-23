@@ -1,6 +1,6 @@
 extends Area2D
 
-const SPEED = 1000.0
+const SPEED = 1500.0
 var velocity = Vector2(SPEED, 0.0)
 
 
@@ -23,8 +23,9 @@ func _physics_process(delta):
 			
 			set_direction(velocity.bounce(normal).normalized())
 			movement = velocity * delta
-		
-	position += movement
+	
+	else:	
+		position += movement
 
 
 #-------------------------------------------------------------------------------

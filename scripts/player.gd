@@ -17,7 +17,7 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("move_down"):
 		movement.y += SPEED
 	
-	move_and_slide(movement)
+	movement = move_and_slide(movement)
 	
 	
 #-------------------------------------------------------------------------------
@@ -27,7 +27,11 @@ func _input(event):
 		get_parent().add_child(bullet)
 		var direction = (get_global_mouse_position() - global_position).normalized()
 		bullet.set_direction(direction)
-		bullet.position = global_position
+		bullet.position = $FirePoint.global_position
+	
+	if event is InputEventMouseMotion:
+		var direction = get_global_mouse_position() - global_position
+		rotation = direction.angle()
 
 
 #-------------------------------------------------------------------------------
