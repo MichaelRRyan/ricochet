@@ -6,6 +6,7 @@ signal next_level_button_pressed()
 #-------------------------------------------------------------------------------
 func _on_GameplayManager_level_complete():
 	show()
+	$LevelCompleteSound.play()
 
 
 #-------------------------------------------------------------------------------

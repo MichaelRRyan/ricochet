@@ -31,6 +31,7 @@ func _input(event):
 		var direction = (get_global_mouse_position() - global_position).normalized()
 		bullet.set_direction(direction)
 		bullet.position = $FirePoint.global_position
+		$GunshotSound.play()
 	
 	if event is InputEventMouseMotion:
 		var direction = get_global_mouse_position() - global_position

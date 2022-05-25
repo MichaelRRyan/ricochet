@@ -7,6 +7,7 @@
 [node name="Level3" instance=ExtResource( 1 )]
 
 [node name="GameplayManager" parent="." index="1"]
+rotation = -0.0520636
 level_number = 4
 
 [node name="Player" parent="." index="2"]
@@ -14,7 +15,7 @@ position = Vector2( 1, 4 )
 rotation = -1.73422
 
 [node name="Block" parent="LevelContent" index="0" instance=ExtResource( 2 )]
-position = Vector2( 169, 66 )
+position = Vector2( 169, 41 )
 scale = Vector2( 1.32816, 3.07139 )
 
 [node name="Block2" parent="LevelContent" index="1" instance=ExtResource( 2 )]
@@ -26,7 +27,7 @@ position = Vector2( -160, -275 )
 scale = Vector2( 1.32816, 3.07139 )
 
 [node name="Block4" parent="LevelContent" index="3" instance=ExtResource( 2 )]
-position = Vector2( -161, 61 )
+position = Vector2( -161, 36 )
 scale = Vector2( 1.32816, 3.07139 )
 
 [node name="Block5" parent="LevelContent" index="4" instance=ExtResource( 2 )]
@@ -50,7 +51,7 @@ rotation = 0.00738323
 scale = Vector2( 3.28351, 9.02672 )
 
 [node name="Block9" parent="LevelContent" index="8" instance=ExtResource( 2 )]
-position = Vector2( 5, 137 )
+position = Vector2( 3, 114 )
 rotation = 0.00738323
 scale = Vector2( -6.47033, 0.833537 )
 
@@ -60,19 +61,19 @@ rotation = 0.00738323
 scale = Vector2( -6.47033, 3.072 )
 
 [node name="Block11" parent="LevelContent" index="10" instance=ExtResource( 2 )]
-position = Vector2( -8.99997, 405 )
+position = Vector2( -7, 388 )
 rotation = 0.00738323
 scale = Vector2( -15.5474, 3.072 )
 
 [node name="Enemy" parent="LevelContent" index="11" instance=ExtResource( 3 )]
-position = Vector2( -7, 240 )
+position = Vector2( -7, 221 )
 
 [node name="Enemy2" parent="LevelContent" index="12" instance=ExtResource( 3 )]
-position = Vector2( -329, 226 )
+position = Vector2( -331, 215 )
 rotation = -1.31372
 
 [node name="Enemy3" parent="LevelContent" index="13" instance=ExtResource( 3 )]
-position = Vector2( 328, 234 )
+position = Vector2( 326, 213 )
 rotation = -1.70226
 
 [node name="Camera2D" parent="." index="4"]

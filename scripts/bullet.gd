@@ -23,6 +23,7 @@ func _physics_process(delta):
 			
 			set_direction(velocity.bounce(normal).normalized())
 			movement = velocity * delta
+			$RicochetSound.play()
 	
 	else:	
 		position += movement
