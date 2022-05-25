@@ -8,19 +8,19 @@ const BulletScene = preload("res://scenes/bullet.tscn")
 
 
 #-------------------------------------------------------------------------------
-func _physics_process(_delta):
-	var movement = Vector2.ZERO
-	
-	if Input.is_action_pressed("move_left"):
-		movement.x -= SPEED
-	if Input.is_action_pressed("move_right"):
-		movement.x += SPEED
-	if Input.is_action_pressed("move_up"):
-		movement.y -= SPEED
-	if Input.is_action_pressed("move_down"):
-		movement.y += SPEED
-	
-	movement = move_and_slide(movement)
+#func _physics_process(_delta):
+#	var movement = Vector2.ZERO
+#
+#	if Input.is_action_pressed("move_left"):
+#		movement.x -= SPEED
+#	if Input.is_action_pressed("move_right"):
+#		movement.x += SPEED
+#	if Input.is_action_pressed("move_up"):
+#		movement.y -= SPEED
+#	if Input.is_action_pressed("move_down"):
+#		movement.y += SPEED
+#
+#	movement = move_and_slide(movement)
 	
 	
 #-------------------------------------------------------------------------------

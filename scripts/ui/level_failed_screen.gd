@@ -8,7 +8,7 @@ func _on_GameplayManager_level_failed():
 
 #-------------------------------------------------------------------------------
 func _on_RetryButton_pressed():
-	get_tree().reload_current_scene()
+	var _r = get_tree().reload_current_scene()
 	get_tree().paused = false
 
 
