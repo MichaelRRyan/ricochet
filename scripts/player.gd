@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+signal died()
+
+
 const SPEED = 100.0
 const BulletScene = preload("res://scenes/bullet.tscn")
 
@@ -37,6 +40,7 @@ func _input(event):
 #-------------------------------------------------------------------------------
 func _on_BulletDetector_area_entered(area):
 	if area.is_in_group("projectile"):
+		emit_signal("died")
 		queue_free()
 
 

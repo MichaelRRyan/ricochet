@@ -9,7 +9,7 @@ radius = 32.0
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 19.1113
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=["player"]]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource( 1 )
