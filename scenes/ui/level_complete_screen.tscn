@@ -48,4 +48,5 @@ margin_right = 409.0
 margin_bottom = 116.0
 text = "Exit to Menu"
 
+[connection signal="pressed" from="Options/NextLevelButton" to="." method="_on_NextLevelButton_pressed"]
 [connection signal="pressed" from="Options/RetryButton" to="." method="_on_RetryButton_pressed"]
