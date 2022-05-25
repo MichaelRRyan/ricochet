@@ -1,32 +1,19 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/block.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=3]
 
 [node name="Gameplay" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( -208, -146 )
+position = Vector2( -220, -132 )
+rotation = 0.0057639
 
 [node name="Block" parent="." instance=ExtResource( 1 )]
 position = Vector2( 190, -133 )
-rotation = -0.564693
+rotation = -0.306195
 scale = Vector2( 2.07245, 5.52584 )
-
-[node name="Block6" parent="." instance=ExtResource( 1 )]
-position = Vector2( -121, 143 )
-rotation = 0.0233104
-scale = Vector2( 2.07245, 5.52584 )
-
-[node name="Block7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 266, 256 )
-rotation = 0.353024
-scale = Vector2( -1.64804, 1.63243 )
-
-[node name="Block8" parent="." instance=ExtResource( 1 )]
-position = Vector2( 533, -66 )
-rotation = 1.93082
-scale = Vector2( -1.64804, 1.63243 )
 
 [node name="Block2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 189, -271 )
@@ -48,6 +35,37 @@ position = Vector2( -323, 12 )
 rotation = 0.0136142
 scale = Vector2( 0.691284, 9.83922 )
 
+[node name="Block6" parent="." instance=ExtResource( 1 )]
+position = Vector2( -92, 139 )
+rotation = -0.129723
+scale = Vector2( 1.34892, 5.52584 )
+
+[node name="Block7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 266, 256 )
+rotation = -2.78857
+scale = Vector2( 1.64804, -1.63243 )
+
+[node name="Block8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 533, -66 )
+rotation = -1.21077
+scale = Vector2( 1.64804, -1.63243 )
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 189, 16 )
 current = true
+
+[node name="Enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 73, 130 )
+rotation = -1.8474
+
+[node name="Enemy2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 506, 181 )
+rotation = -2.77834
+
+[node name="Enemy3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 377, -146 )
+rotation = -4.6863
+
+[node name="Enemy4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 609, -173 )
+rotation = -3.10397
