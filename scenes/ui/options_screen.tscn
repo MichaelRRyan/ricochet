@@ -45,7 +45,9 @@ margin_right = 715.0
 margin_bottom = 34.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-value = 50.0
+max_value = 2.0
+step = 0.01
+value = 1.0
 
 [node name="MuteButton" type="CheckBox" parent="Settings/MasterVolume"]
 margin_left = 719.0
@@ -73,7 +75,9 @@ margin_right = 715.0
 margin_bottom = 34.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-value = 50.0
+max_value = 2.0
+step = 0.01
+value = 1.0
 
 [node name="MuteButton" type="CheckBox" parent="Settings/SFXVolume"]
 margin_left = 719.0
@@ -101,7 +105,9 @@ margin_right = 715.0
 margin_bottom = 34.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-value = 50.0
+max_value = 2.0
+step = 0.01
+value = 1.0
 
 [node name="MuteButton" type="CheckBox" parent="Settings/MusicVolume"]
 margin_left = 719.0
@@ -146,5 +152,12 @@ margin_top = -32.0
 margin_right = 84.0
 text = "Back to Menu"
 
+[connection signal="value_changed" from="Settings/MasterVolume/HSlider" to="." method="_on_MasterVolume_value_changed"]
+[connection signal="toggled" from="Settings/MasterVolume/MuteButton" to="." method="_on_MasterVolumeMute_toggled"]
+[connection signal="value_changed" from="Settings/SFXVolume/HSlider" to="." method="_on_SFXVolume_value_changed"]
+[connection signal="toggled" from="Settings/SFXVolume/MuteButton" to="." method="_on_SFXVolumeMute_toggled"]
+[connection signal="value_changed" from="Settings/MusicVolume/HSlider" to="." method="_on_MusicVolume_value_changed"]
+[connection signal="toggled" from="Settings/MusicVolume/MuteButton" to="." method="_on_MusicVolumeMute_toggled"]
+[connection signal="toggled" from="Settings/Fullscreen/CheckBox" to="." method="_on_Fullscreen_toggled"]
 [connection signal="pressed" from="Settings/ResetToDefaultButton" to="." method="_on_ResetToDefaultButton_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
