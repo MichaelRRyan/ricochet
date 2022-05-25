@@ -24,13 +24,13 @@ func _on_enemy_died():
 	enemy_count -= 1
 	if enemy_count == 0:
 		emit_signal("level_complete")
-		print("You won!")
+		get_tree().paused = true
 
 
 #-------------------------------------------------------------------------------
 func _on_player_died():
 	emit_signal("level_failed")
-	print("You lost!")
+	get_tree().paused = true
 
 
 #-------------------------------------------------------------------------------

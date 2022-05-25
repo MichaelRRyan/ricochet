@@ -1,11 +1,26 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/block.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/gameplay_manager.gd" type="Script" id=4]
+[ext_resource path="res://scenes/ui/level_complete_screen.tscn" type="PackedScene" id=5]
 
 [node name="Gameplay" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+pause_mode = 2
+
+[node name="PauseScreen" type="Control" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="LevelCompleteScreen" parent="CanvasLayer" instance=ExtResource( 5 )]
+visible = false
+
+[node name="LevelFailedScreen" type="Control" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
 
 [node name="GameplayManager" type="Node2D" parent="."]
 script = ExtResource( 4 )
@@ -73,3 +88,5 @@ rotation = -4.6863
 [node name="Enemy4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 609, -173 )
 rotation = -3.10397
+
+[connection signal="level_complete" from="GameplayManager" to="CanvasLayer/LevelCompleteScreen" method="_on_GameplayManager_level_complete"]
