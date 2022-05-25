@@ -7,7 +7,6 @@ var _music_volume : float = 1.0  setget set_music_volume, get_music_volume
 var _master_volume_muted : bool = false setget set_master_volume_muted, get_master_volume_muted
 var _sfx_volume_muted : bool = false setget set_sfx_volume_muted, get_sfx_volume_muted
 var _music_volume_muted : bool = false setget set_music_volume_muted, get_music_volume_muted
-var _fullscreen : bool = false setget set_fullscreen, get_fullscreen
 
 
 #-------------------------------------------------------------------------------
@@ -18,7 +17,6 @@ func reset_all():
 	_master_volume_muted = false
 	_sfx_volume_muted = false
 	_music_volume_muted = false
-	_fullscreen = false
 
 
 #-------------------------------------------------------------------------------
@@ -53,7 +51,7 @@ func set_music_volume_muted(value : bool) -> void:
 
 #-------------------------------------------------------------------------------
 func set_fullscreen(value : bool) -> void:
-	_fullscreen = value
+	OS.window_fullscreen = value
 
 
 #-------------------------------------------------------------------------------
@@ -73,7 +71,7 @@ func get_music_volume() -> float:
 
 #-------------------------------------------------------------------------------
 func get_fullscreen() -> bool:
-	return _fullscreen
+	return OS.window_fullscreen
 
 
 #-------------------------------------------------------------------------------

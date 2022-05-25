@@ -54,3 +54,4 @@ stream = ExtResource( 3 )
 
 [connection signal="pressed" from="Options/NextLevelButton" to="." method="_on_NextLevelButton_pressed"]
 [connection signal="pressed" from="Options/RetryButton" to="." method="_on_RetryButton_pressed"]
+[connection signal="pressed" from="Options/ExitButton" to="." method="_on_ExitButton_pressed"]

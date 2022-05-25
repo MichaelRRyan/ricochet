@@ -18,6 +18,11 @@ config/icon="res://assets/images/icon.png"
 
 UserPreferences="*res://scripts/user_preferences.gd"
 
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
 [input]
 
 move_left={

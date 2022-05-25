@@ -21,6 +21,9 @@ func _on_RetryButton_pressed():
 
 
 #-------------------------------------------------------------------------------
+func _on_ExitButton_pressed():
+	var _r = get_tree().change_scene("res://scenes/ui/main_menu_screen.tscn")
+	get_tree().paused = false
 
 
-
+#-------------------------------------------------------------------------------

@@ -3,7 +3,7 @@ extends Control
 
 #-------------------------------------------------------------------------------
 func _on_PlayButton_pressed():
-	pass # Replace with function body.
+	var _r = get_tree().change_scene("res://scenes/levels/level1.tscn")
 
 
 #-------------------------------------------------------------------------------
