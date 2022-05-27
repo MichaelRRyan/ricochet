@@ -24,7 +24,6 @@ func _ready():
 #-------------------------------------------------------------------------------
 func _on_enemy_died():
 	enemy_count -= 1
-	$EnemyDeathSound.play()
 	
 	if enemy_count == 0:
 		emit_signal("level_complete")

@@ -17,6 +17,7 @@ config/icon="res://assets/images/icon.png"
 [autoload]
 
 UserPreferences="*res://scripts/user_preferences.gd"
+AudioManager="*res://scripts/audio_manager.gd"
 
 [display]
 

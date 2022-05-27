@@ -1,10 +1,12 @@
 extends Control
 
+const LEVEL_FAILED_SOUND = "res://assets/audio/sounds/lose.wav"
+
 
 #-------------------------------------------------------------------------------
 func _on_GameplayManager_level_failed():
 	show()
-	$LevelFailedSound.play()
+	AudioManager.play(LEVEL_FAILED_SOUND)
 
 
 #-------------------------------------------------------------------------------

@@ -8,6 +8,9 @@ var _master_volume_muted : bool = false setget set_master_volume_muted, get_mast
 var _sfx_volume_muted : bool = false setget set_sfx_volume_muted, get_sfx_volume_muted
 var _music_volume_muted : bool = false setget set_music_volume_muted, get_music_volume_muted
 
+var volume_curve = preload("res://resources/curves/volume_curve.tres")
+var master_bus = AudioServer.get_bus_index("Master")
+
 
 #-------------------------------------------------------------------------------
 func reset_all():
@@ -17,16 +20,24 @@ func reset_all():
 	_master_volume_muted = false
 	_sfx_volume_muted = false
 	_music_volume_muted = false
+	
+	var new_volume = volume_curve.interpolate(get_sfx_volume())
+	AudioServer.set_bus_volume_db(master_bus, new_volume)
+	AudioServer.set_bus_mute(master_bus, get_sfx_volume_muted())
 
 
 #-------------------------------------------------------------------------------
 func set_master_volume(value : float) -> void:
 	_master_volume = value
+	var new_volume = volume_curve.interpolate(get_sfx_volume())
+	AudioServer.set_bus_volume_db(master_bus, new_volume)
 
 
 #-------------------------------------------------------------------------------
 func set_sfx_volume(value : float) -> void:
 	_sfx_volume = value
+	var new_volume = volume_curve.interpolate(get_sfx_volume())
+	AudioServer.set_bus_volume_db(master_bus, new_volume)
 
 
 #-------------------------------------------------------------------------------
@@ -37,11 +48,13 @@ func set_music_volume(value : float) -> void:
 #-------------------------------------------------------------------------------
 func set_master_volume_muted(value : bool) -> void:
 	_master_volume_muted = value
+	AudioServer.set_bus_mute(master_bus, get_sfx_volume_muted())
 
 
 #-------------------------------------------------------------------------------
 func set_sfx_volume_muted(value : bool) -> void:
 	_sfx_volume_muted = value
+	AudioServer.set_bus_mute(master_bus, get_sfx_volume_muted())
 
 
 #-------------------------------------------------------------------------------

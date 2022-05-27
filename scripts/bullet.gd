@@ -1,6 +1,8 @@
 extends Area2D
 
+const RICOCHET_SOUND = "res://assets/audio/sounds/ricochet.wav"
 const SPEED = 1500.0
+
 var velocity = Vector2(SPEED, 0.0)
 
 
@@ -23,7 +25,7 @@ func _physics_process(delta):
 			
 			set_direction(velocity.bounce(normal).normalized())
 			movement = velocity * delta
-			$RicochetSound.play()
+			AudioManager.play(RICOCHET_SOUND)
 	
 	else:	
 		position += movement

@@ -27,6 +27,8 @@ func _set_options_match_preferences():
 #-------------------------------------------------------------------------------
 func _on_MasterVolume_value_changed(value):
 	UserPreferences.set_master_volume(value)
+	if not $VolumeTestSound.playing:
+		$VolumeTestSound.play()
 
 
 #-------------------------------------------------------------------------------
@@ -37,6 +39,8 @@ func _on_MasterVolumeMute_toggled(button_pressed):
 #-------------------------------------------------------------------------------
 func _on_SFXVolume_value_changed(value):
 	UserPreferences.set_sfx_volume(value)
+	if not $VolumeTestSound.playing:
+		$VolumeTestSound.play()
 
 
 #-------------------------------------------------------------------------------

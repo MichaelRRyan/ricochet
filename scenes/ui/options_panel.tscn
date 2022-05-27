@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/ui/options_panel.gd" type="Script" id=1]
+[ext_resource path="res://assets/audio/sounds/gunshot.wav" type="AudioStream" id=2]
 
 [node name="Settings" type="VBoxContainer"]
 anchor_left = 0.1
@@ -29,7 +30,7 @@ margin_right = 715.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-max_value = 2.0
+max_value = 1.0
 step = 0.01
 value = 1.0
 
@@ -59,7 +60,7 @@ margin_right = 715.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-max_value = 2.0
+max_value = 1.0
 step = 0.01
 value = 1.0
 
@@ -89,7 +90,7 @@ margin_right = 715.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-max_value = 2.0
+max_value = 1.0
 step = 0.01
 value = 1.0
 
@@ -125,6 +126,9 @@ margin_right = 476.0
 margin_bottom = 303.0
 size_flags_horizontal = 4
 text = "Reset all to Default"
+
+[node name="VolumeTestSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
 
 [connection signal="value_changed" from="MasterVolume/HSlider" to="." method="_on_MasterVolume_value_changed"]
 [connection signal="toggled" from="MasterVolume/MuteButton" to="." method="_on_MasterVolumeMute_toggled"]

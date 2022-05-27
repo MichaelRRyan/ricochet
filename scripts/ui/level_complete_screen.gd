@@ -2,11 +2,13 @@ extends Control
 
 signal next_level_button_pressed()
 
+const LEVEL_COMPLETE_SOUND = "res://assets/audio/sounds/win.wav"
+
 
 #-------------------------------------------------------------------------------
 func _on_GameplayManager_level_complete():
 	show()
-	$LevelCompleteSound.play()
+	AudioManager.play(LEVEL_COMPLETE_SOUND)
 
 
 #-------------------------------------------------------------------------------
