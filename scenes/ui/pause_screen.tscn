@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://resources/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/ui/pause_screen.gd" type="Script" id=2]
+[ext_resource path="res://scenes/ui/options_panel.tscn" type="PackedScene" id=3]
 
 [node name="PauseScreen" type="Control"]
 anchor_right = 1.0
@@ -43,7 +44,6 @@ text = "Restart Level"
 margin_top = 277.0
 margin_right = 455.0
 margin_bottom = 309.0
-disabled = true
 text = "Options"
 
 [node name="ExitButton" type="Button" parent="Menu"]
@@ -52,7 +52,37 @@ margin_right = 455.0
 margin_bottom = 351.0
 text = "Exit to Menu"
 
+[node name="Options" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Title" type="Label" parent="Options"]
+anchor_left = 0.5
+anchor_top = 0.05
+anchor_right = 0.5
+anchor_bottom = 0.05
+margin_left = -45.0
+margin_right = 45.0
+margin_bottom = 26.0
+text = "Options"
+align = 1
+valign = 1
+
+[node name="Settings" parent="Options" instance=ExtResource( 3 )]
+
+[node name="BackButton" type="Button" parent="Options"]
+anchor_left = 0.5
+anchor_top = 0.95
+anchor_right = 0.5
+anchor_bottom = 0.95
+margin_left = -33.0
+margin_top = -32.0
+margin_right = 33.0
+text = "Back"
+
 [connection signal="pressed" from="Menu/ResumeButton" to="." method="_on_ResumeButton_pressed"]
 [connection signal="pressed" from="Menu/RestartButton" to="." method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="Menu/OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="Menu/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="Options/BackButton" to="." method="_on_BackButton_pressed"]

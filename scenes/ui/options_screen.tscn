@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://resources/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/ui/options_screen.gd" type="Script" id=2]
+[ext_resource path="res://scenes/ui/options_panel.tscn" type="PackedScene" id=3]
 
 [node name="Options" type="Control"]
 anchor_right = 1.0
@@ -19,128 +20,7 @@ margin_right = 45.0
 margin_bottom = 26.0
 text = "Options"
 
-[node name="Settings" type="VBoxContainer" parent="."]
-anchor_left = 0.1
-anchor_top = 0.15
-anchor_right = 0.9
-anchor_bottom = 0.9
-custom_constants/separation = 10
-alignment = 1
-
-[node name="MasterVolume" type="HBoxContainer" parent="Settings"]
-margin_top = 121.0
-margin_right = 819.0
-margin_bottom = 155.0
-
-[node name="Label" type="Label" parent="Settings/MasterVolume"]
-margin_top = 4.0
-margin_right = 200.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 200, 0 )
-text = "Master Volume"
-
-[node name="HSlider" type="HSlider" parent="Settings/MasterVolume"]
-margin_left = 204.0
-margin_right = 715.0
-margin_bottom = 34.0
-size_flags_horizontal = 3
-size_flags_vertical = 1
-max_value = 2.0
-step = 0.01
-value = 1.0
-
-[node name="MuteButton" type="CheckBox" parent="Settings/MasterVolume"]
-margin_left = 719.0
-margin_right = 819.0
-margin_bottom = 34.0
-rect_min_size = Vector2( 100, 0 )
-text = "Mute"
-align = 1
-
-[node name="SFXVolume" type="HBoxContainer" parent="Settings"]
-margin_top = 165.0
-margin_right = 819.0
-margin_bottom = 199.0
-
-[node name="Label" type="Label" parent="Settings/SFXVolume"]
-margin_top = 4.0
-margin_right = 200.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 200, 0 )
-text = "SFX Volume"
-
-[node name="HSlider" type="HSlider" parent="Settings/SFXVolume"]
-margin_left = 204.0
-margin_right = 715.0
-margin_bottom = 34.0
-size_flags_horizontal = 3
-size_flags_vertical = 1
-max_value = 2.0
-step = 0.01
-value = 1.0
-
-[node name="MuteButton" type="CheckBox" parent="Settings/SFXVolume"]
-margin_left = 719.0
-margin_right = 819.0
-margin_bottom = 34.0
-rect_min_size = Vector2( 100, 0 )
-text = "Mute"
-align = 1
-
-[node name="MusicVolume" type="HBoxContainer" parent="Settings"]
-margin_top = 209.0
-margin_right = 819.0
-margin_bottom = 243.0
-
-[node name="Label" type="Label" parent="Settings/MusicVolume"]
-margin_top = 4.0
-margin_right = 200.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 200, 0 )
-text = "Music Volume"
-
-[node name="HSlider" type="HSlider" parent="Settings/MusicVolume"]
-margin_left = 204.0
-margin_right = 715.0
-margin_bottom = 34.0
-size_flags_horizontal = 3
-size_flags_vertical = 1
-max_value = 2.0
-step = 0.01
-value = 1.0
-
-[node name="MuteButton" type="CheckBox" parent="Settings/MusicVolume"]
-margin_left = 719.0
-margin_right = 819.0
-margin_bottom = 34.0
-rect_min_size = Vector2( 100, 0 )
-text = "Mute"
-align = 1
-
-[node name="Fullscreen" type="HBoxContainer" parent="Settings"]
-margin_top = 253.0
-margin_right = 819.0
-margin_bottom = 287.0
-
-[node name="Label" type="Label" parent="Settings/Fullscreen"]
-margin_top = 4.0
-margin_right = 200.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 200, 0 )
-text = "Fullscreen"
-
-[node name="CheckBox" type="CheckBox" parent="Settings/Fullscreen"]
-margin_left = 204.0
-margin_right = 228.0
-margin_bottom = 34.0
-
-[node name="ResetToDefaultButton" type="Button" parent="Settings"]
-margin_left = 283.0
-margin_top = 297.0
-margin_right = 535.0
-margin_bottom = 329.0
-size_flags_horizontal = 4
-text = "Reset all to Default"
+[node name="Settings" parent="." instance=ExtResource( 3 )]
 
 [node name="BackButton" type="Button" parent="."]
 anchor_left = 0.5
@@ -152,12 +32,4 @@ margin_top = -32.0
 margin_right = 84.0
 text = "Back to Menu"
 
-[connection signal="value_changed" from="Settings/MasterVolume/HSlider" to="." method="_on_MasterVolume_value_changed"]
-[connection signal="toggled" from="Settings/MasterVolume/MuteButton" to="." method="_on_MasterVolumeMute_toggled"]
-[connection signal="value_changed" from="Settings/SFXVolume/HSlider" to="." method="_on_SFXVolume_value_changed"]
-[connection signal="toggled" from="Settings/SFXVolume/MuteButton" to="." method="_on_SFXVolumeMute_toggled"]
-[connection signal="value_changed" from="Settings/MusicVolume/HSlider" to="." method="_on_MusicVolume_value_changed"]
-[connection signal="toggled" from="Settings/MusicVolume/MuteButton" to="." method="_on_MusicVolumeMute_toggled"]
-[connection signal="toggled" from="Settings/Fullscreen/CheckBox" to="." method="_on_Fullscreen_toggled"]
-[connection signal="pressed" from="Settings/ResetToDefaultButton" to="." method="_on_ResetToDefaultButton_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]

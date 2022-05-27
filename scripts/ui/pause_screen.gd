@@ -9,18 +9,19 @@ func _on_ResumeButton_pressed():
 
 #-------------------------------------------------------------------------------
 func _on_RestartButton_pressed():
-	get_tree().reload_current_scene()
+	var _r = get_tree().reload_current_scene()
 	get_tree().paused = false
 
 
 #-------------------------------------------------------------------------------
 func _on_OptionsButton_pressed():
-	pass # Replace with function body.
+	$Options.show()
+	$Menu.hide()
 
 
 #-------------------------------------------------------------------------------
 func _on_ExitButton_pressed():
-	get_tree().change_scene("res://scenes/ui/main_menu_screen.tscn")
+	var _r = get_tree().change_scene("res://scenes/ui/main_menu_screen.tscn")
 	get_tree().paused = false
 
 
@@ -37,6 +38,12 @@ func _input(event):
 		elif not get_tree().paused:
 			show()
 			get_tree().paused = true
+
+
+#-------------------------------------------------------------------------------
+func _on_BackButton_pressed():
+	$Options.hide()
+	$Menu.show()
 
 
 #-------------------------------------------------------------------------------
