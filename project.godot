@@ -18,6 +18,7 @@ config/icon="res://assets/images/icon.png"
 
 UserPreferences="*res://scripts/user_preferences.gd"
 AudioManager="*res://scripts/audio_manager.gd"
+UserData="*res://scripts/user_data.gd"
 
 [display]
 

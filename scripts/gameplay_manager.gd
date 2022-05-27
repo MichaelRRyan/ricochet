@@ -26,6 +26,7 @@ func _on_enemy_died():
 	enemy_count -= 1
 	
 	if enemy_count == 0:
+		UserData.level_completed(level_number)
 		emit_signal("level_complete")
 		get_tree().paused = true
 
