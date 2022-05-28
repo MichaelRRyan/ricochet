@@ -2,7 +2,9 @@ extends Node2D
 
 signal level_complete()
 signal level_failed()
+signal game_complete()
 
+const LAST_LEVEL_NUMBER = 5
 
 export var level_number : int = -1
 
@@ -27,8 +29,12 @@ func _on_enemy_died():
 	
 	if enemy_count == 0:
 		UserData.level_completed(level_number)
-		emit_signal("level_complete")
 		get_tree().paused = true
+		
+		if LAST_LEVEL_NUMBER == level_number:
+			emit_signal("game_complete")
+		else:
+			emit_signal("level_complete")
 
 
 #-------------------------------------------------------------------------------
