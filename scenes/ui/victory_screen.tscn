@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://resources/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/ui/level_complete_screen.gd" type="Script" id=2]
+[ext_resource path="res://resources/shaders/blur_shader_material.tres" type="Material" id=3]
+[ext_resource path="res://resources/fonts/title_font.tres" type="DynamicFont" id=4]
 
 [node name="VictoryScreen" type="Control"]
 anchor_right = 1.0
@@ -9,37 +11,43 @@ anchor_bottom = 1.0
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
 
-[node name="Label" type="Label" parent="."]
-anchor_left = 0.5
+[node name="Background" type="ColorRect" parent="."]
+material = ExtResource( 3 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.309804, 0.309804, 0.309804, 1 )
+
+[node name="Title" type="Label" parent="."]
 anchor_top = 0.2
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -264.0
-margin_top = -103.0
-margin_right = 264.0
-margin_bottom = 103.0
-text = "Congratulations, you've completed the game!"
+anchor_right = 1.0
+anchor_bottom = 0.2
+margin_bottom = 159.0
+custom_fonts/font = ExtResource( 4 )
+text = "Congratulations
+You've completed the game!"
 align = 1
 valign = 1
 
 [node name="Options" type="VBoxContainer" parent="."]
 anchor_left = 0.3
-anchor_top = 0.6
+anchor_top = 0.4
 anchor_right = 0.7
-anchor_bottom = 1.0
+anchor_bottom = 0.8
 margin_left = 0.23999
 margin_right = -0.240051
 custom_constants/separation = 10
+alignment = 1
 
 [node name="RetryButton" type="Button" parent="Options"]
+margin_top = 75.0
 margin_right = 409.0
-margin_bottom = 32.0
+margin_bottom = 115.0
 text = "Retry Level"
 
 [node name="ExitButton" type="Button" parent="Options"]
-margin_top = 42.0
+margin_top = 125.0
 margin_right = 409.0
-margin_bottom = 74.0
+margin_bottom = 165.0
 text = "Exit to Menu"
 
 [connection signal="pressed" from="Options/RetryButton" to="." method="_on_RetryButton_pressed"]

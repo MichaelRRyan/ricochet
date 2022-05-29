@@ -17,6 +17,7 @@ func _on_RestartButton_pressed():
 func _on_OptionsButton_pressed():
 	$Options.show()
 	$Menu.hide()
+	$Title.hide()
 
 
 #-------------------------------------------------------------------------------
@@ -44,6 +45,7 @@ func _input(event):
 func _on_BackButton_pressed():
 	$Options.hide()
 	$Menu.show()
+	$Title.show()
 
 
 #-------------------------------------------------------------------------------
