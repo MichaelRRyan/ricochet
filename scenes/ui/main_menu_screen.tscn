@@ -2,7 +2,7 @@
 
 [ext_resource path="res://resources/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/ui/main_menu_screen.gd" type="Script" id=2]
-[ext_resource path="res://resources/fonts/title_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/images/ricochet_title.svg" type="Texture" id=3]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -10,31 +10,29 @@ anchor_bottom = 1.0
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="TextureRect" parent="."]
 anchor_left = 0.5
 anchor_top = 0.2
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -288.0
-margin_top = -36.0
-margin_right = 288.0
-margin_bottom = 36.0
-custom_colors/font_color = Color( 0.490196, 0.517647, 0.913725, 1 )
-custom_fonts/font = ExtResource( 3 )
-text = "RICHOCHET"
-align = 1
-valign = 1
+margin_left = -352.0
+margin_top = 33.0
+margin_right = 352.0
+margin_bottom = -33.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 5
 
 [node name="Credit" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.4
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -253.0
+margin_left = -463.0
 margin_top = 15.0
-margin_right = 281.0
+margin_right = 461.0
 margin_bottom = 41.0
-custom_colors/font_color = Color( 0.431373, 0.392157, 0.890196, 1 )
+custom_colors/font_color = Color( 0.52549, 0.52549, 0.52549, 1 )
 text = "Made by James & Michael Rainsford Ryan"
 align = 1
 valign = 1
@@ -50,19 +48,19 @@ custom_constants/separation = 10
 
 [node name="PlayButton" type="Button" parent="Options"]
 margin_right = 421.0
-margin_bottom = 32.0
+margin_bottom = 36.0
 text = "Play"
 
 [node name="OptionsButton" type="Button" parent="Options"]
-margin_top = 42.0
+margin_top = 46.0
 margin_right = 421.0
-margin_bottom = 74.0
+margin_bottom = 82.0
 text = "Options"
 
 [node name="ExitButton" type="Button" parent="Options"]
-margin_top = 84.0
+margin_top = 92.0
 margin_right = 421.0
-margin_bottom = 116.0
+margin_bottom = 128.0
 text = "Exit Game"
 
 [connection signal="pressed" from="Options/PlayButton" to="." method="_on_PlayButton_pressed"]
