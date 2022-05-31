@@ -3,6 +3,7 @@ extends KinematicBody2D
 signal died()
 
 const GUNSHOT_SOUND = "res://assets/audio/sounds/gunshot.wav"
+const DEATH_SOUND = "res://assets/audio/sounds/death"
 const SPEED = 100.0
 const BulletScene = preload("res://scenes/bullet.tscn")
 
@@ -25,6 +26,7 @@ func _input(event):
 #-------------------------------------------------------------------------------
 func _on_BulletDetector_area_entered(area):
 	if area.is_in_group("projectile"):
+		AudioManager.play(DEATH_SOUND + str(randi() % 3) + ".wav")
 		emit_signal("died")
 		queue_free()
 
